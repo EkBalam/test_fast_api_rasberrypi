@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  ######### fastapi ########
+  fastapi:
+    container_name: fastapi
+    build: .
+    ports:
+      - "80:80"
+    restart: always
+    volumes:
+      - ../../app:/code/app
+    entrypoint: fastapi run app/main.py --port 80
+
